@@ -1,0 +1,15 @@
+Checks: >
+  -*,
+  bugprone-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  -readability-braces-around-statements,
+  -readability-magic-numbers,
+  -readability-math-missing-parentheses,
+  -readability-identifier-length,
+  -modernize-use-trailing-return-type,
+  -performance-enum-size
+WarningsAsErrors: ''
+HeaderFilterRegex: 'pi/include/pi/.*'
+FormatStyle: file
