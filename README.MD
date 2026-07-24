@@ -9,7 +9,7 @@ Boost.Multiprecision, one with a BigInt/BigFloat written from scratch.
 | Tool | What it's for | Debian/Ubuntu | Arch |
 |---|---|---|---|
 | CMake 3.25+ | configures and builds the project | `apt install cmake` | `pacman -S cmake` |
-| C++23 compiler | gcc/clang, whatever's recent | - | - |
+| C++23 compiler | gcc/clang | - | - |
 | Boost (header-only `multiprecision`) | big-integer math for the `library` backend | `apt install libboost-dev` | `pacman -S boost` |
 | libgmp + pkg-config | optional, only for `-DBUILD_REFERENCE=ON`, see below | `apt install libgmp-dev pkg-config` | `pacman -S gmp pkgconf` |
 | clang-format + clang-tidy | optional, formatting/linting, see below | `apt install clang-format clang-tidy` | `pacman -S clang` |
