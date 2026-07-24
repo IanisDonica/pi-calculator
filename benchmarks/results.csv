@@ -1,0 +1,32 @@
+suite,backend,digits,threads,seconds
+scalability,library backend,16000,1,0.10663800000000001
+scalability,library backend,16000,2,0.111888
+scalability,library backend,16000,4,0.116272
+scalability,library backend,16000,8,0.12892099999999998
+scalability,custom backend,16000,1,1.3238599999999998
+scalability,custom backend,16000,2,1.3130899999999999
+scalability,custom backend,16000,4,1.3023900000000002
+scalability,custom backend,16000,8,1.33248
+scalability,library backend,32000,1,0.45064499999999996
+scalability,library backend,32000,2,0.43755099999999997
+scalability,library backend,32000,4,0.44306599999999996
+scalability,library backend,32000,8,0.481205
+scalability,custom backend,32000,1,5.9431199999999995
+scalability,custom backend,32000,2,6.2863
+scalability,custom backend,32000,4,6.15238
+scalability,custom backend,32000,8,6.08608
+vs_gmp,library backend,1000,1,0.003252550000070187
+vs_gmp,custom backend,1000,1,0.007491072999982862
+vs_gmp,gmp-chudnovsky,1000,1,0.0016610379998382996
+vs_gmp,library backend,2000,1,0.004529224999714643
+vs_gmp,custom backend,2000,1,0.02360359599970252
+vs_gmp,gmp-chudnovsky,2000,1,0.0020361209999464336
+vs_gmp,library backend,4000,1,0.00981878999982655
+vs_gmp,custom backend,4000,1,0.08237402300028407
+vs_gmp,gmp-chudnovsky,4000,1,0.0021494120001079864
+vs_gmp,library backend,8000,1,0.033272166999722685
+vs_gmp,custom backend,8000,1,0.36629985600029613
+vs_gmp,gmp-chudnovsky,8000,1,0.003623075000177778
+vs_gmp,library backend,16000,1,0.13179520699986824
+vs_gmp,custom backend,16000,1,1.407216870999946
+vs_gmp,gmp-chudnovsky,16000,1,0.005072434999874531
