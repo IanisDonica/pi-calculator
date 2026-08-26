@@ -34,17 +34,7 @@ cmake -B build
 cmake --build build
 ```
 
-Defaults to an optimized `Release` build (`-O3`) if you don't pass
-`-DCMAKE_BUILD_TYPE=...` yourself. This matters here since the benchmark
-numbers below are meaningless under an unoptimized build.
-
 The binary ends up at `build/pi`.
-
-Tests run through ctest as usual:
-
-```
-ctest --test-dir build
-```
 
 ## Running it
 
@@ -53,8 +43,8 @@ pi --terms <n> [--backend library|custom] [--threads n] [--sqrt] [--benchmark]
 pi --digits <n> [--backend library|custom] [--threads n] [--sqrt] [--benchmark]
 ```
 
-- `--terms` / `--digits`: compute pi from a term count, or work backwards
-  from a requested number of decimal digits. Pick one.
+- `--terms` / `--digits`: compute pi from a term count, or
+  from a requested number of decimal digits. 
 - `--backend`: `library` uses Boost's `cpp_int` for the big-integer math,
   `custom` uses my own BigInt/BigFloat. Default is `library`.
 - `--threads`: how many threads to use for binary splitting. Default 1.
@@ -79,13 +69,6 @@ cmake -B build -DBUILD_REFERENCE=ON
 cmake --build build
 ./build/gmp-chudnovsky 10000 0
 ```
-
-It's off by default since it downloads a file and pulls in a GMP dependency
-that the rest of the project doesn't otherwise need.
-
-(`gmp-chudnovsky.c` doesn't compile as downloaded on a recent glibc: it
-declares a variable named `fmul`, which collides with glibc's own `fmul`
-declaration. The build patches the name automatically after downloading it.)
 
 ## Benchmarks
 
@@ -112,19 +95,12 @@ is a lot better optimized than either of ours.
 
 ## Docs
 
-The public headers in `include/pi/` have Doxygen comments. Generate HTML docs
-with:
-
+Made with doxygen, and hosted on (https://ianisdonica.github.io/pi-calculator/)[github-pages].
+Alternativly generate them with doxygen, using:
+ 
 ```
 doxygen Doxyfile
-```
-
-from the repo root, then open `docs/html/index.html` directly in a browser,
-no server needed. The search box needs a local server to work though, since
-it does an XHR that `file://` blocks:
-
-```
 python3 -m http.server --directory docs/html 8000
 ```
 
-then visit `http://localhost:8000`.
+then visit `http://localhost:8000`
