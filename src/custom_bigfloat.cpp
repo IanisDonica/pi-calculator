@@ -29,12 +29,9 @@ const BigInt &BigFloat::scaled_value() const { return scaled_value_; }
 
 std::uint64_t BigFloat::scale() const { return scale_; }
 
-// sqrt(p / 10^s) == sqrt(p * 10^s) / 10^s, so this stays an exact integer sqrt
-// at the same scale, no matter how scale_ relates to the digits we want.
 BigFloat BigFloat::sqrt() const {
-  const BigInt factor = pow10(scale_);
-  return BigFloat::from_scaled(
-      integer_sqrt(scaled_value_ * factor * factor * factor) / factor, scale_);
+  return BigFloat::from_scaled(integer_sqrt(scaled_value_ * pow10(scale_)),
+                               scale_);
 }
 
 BigFloat BigFloat::multiply_integer(const BigInt &value) const {
